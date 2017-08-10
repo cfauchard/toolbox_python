@@ -1,4 +1,4 @@
-Procédure d'installation de la toolbox:
+# Procédure d'installation de la toolbox:
 
 1. Git clone de la toolbox à la main
 2. Création d'un virtualenv à la main
