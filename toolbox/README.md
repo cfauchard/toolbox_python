@@ -9,7 +9,7 @@ lancer le script install.sh
         -python-scikits-learn
         -python-pudb
         
-    il va egalement suprimer le .git actuel et initier un nouveau repo 
+    il va egalement supprimer le .git actuel et initier un nouveau repo 
     pour ajouter le nouveau repo lancer la commande :
     ```bash
     git remote add origin $(git url)
@@ -38,3 +38,16 @@ lancer le script install.sh
         - dans cette fenetre renseigner le nom de package suivant :
                 - anaconda
 
+
+# Procédure d'installation de la toolbox:
+
+
+1. Git clone de la toolbox à la main
+2. Création d'un virtualenv à la main
+3. Lancer le(s) script(s) d'installation à la main. Ces script vont:
+    3.0 installer des libraries 
+    3.1 installer sublime & co
+    3.2 supprimer le .git du projet toolbox
+    3.3 faire un git init sur projet_id
+    3.4 créer les liens symboliques depuis .git/hooks vers conf/hooks (il faut que les liens soient executables)
+4. Ajouter le repo git remote à la main "git remote add.."
