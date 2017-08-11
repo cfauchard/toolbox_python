@@ -38,14 +38,33 @@ lancer le script install.sh
         - dans cette fenetre renseigner le nom de package suivant :
                 - anaconda
 
+#### Optional:
+
+Pour ignorer la règle de la longeur de lignes du code: 
+
+Copier les settings d'anaconda dans sublime  
+	Preferences -> Package Setting -> Anaconda -> Settings -Default et selectioner tout le contenu 
+    et copier.
+    
+    Coller le contenu dans Preferences -> Package Setting -> Anaconda -> Settings - User
+    et remplacer la ligne  "pep8_ignore" par
+```
+"pep8_ignore":
+    [
+        "E309", "E501"
+    ],
+```
+Normalement il faut juste ajouter E501.
 
 # Procédure d'installation de la toolbox:
 
 
 1. Git clone de la toolbox à la main
 2. Création d'un virtualenv à la main
-    -> virtualenv --system-site-packages -p python3 <yourTargetDirectory>
-    -> à faire avant si besoin: sudo apt-get install python3-pip python3-dev python-virtualenv # for Python 3.n)
+	2.1 virtualenv --system-site-packages -p python3 ``yourTargetDirectory``
+	(à faire avant si besoin: sudo apt-get install python3-pip python3-dev python-virtualenv # for Python 3.n)
+    2.2 dans ``yourTargetRepository``, lancer ``source bin/activate`` pour activer le virtualenv.
+    2.3 ``(yourTargetRepository$``) s'affiche devant le prompt.
 3. Lancer le(s) script(s) d'installation à la main. Ces script vont:
     3.0 installer des libraries 
     3.1 installer sublime & co
