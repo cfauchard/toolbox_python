@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ -f /usr/local/bin/subl ]; then
+	echo 'sublime text already installed'
+	echo "run with:subl"
+
+    return
+fi
 # Sublime Text 3 Install 
 # Detect the architecture
 if [[ "$(uname -m)" = "x86_64" ]]; then
