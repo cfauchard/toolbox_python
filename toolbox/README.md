@@ -44,6 +44,8 @@ lancer le script install.sh
 
 1. Git clone de la toolbox à la main
 2. Création d'un virtualenv à la main
+    -> virtualenv --system-site-packages -p python3 <yourTargetDirectory>
+    -> à faire avant si besoin: sudo apt-get install python3-pip python3-dev python-virtualenv # for Python 3.n)
 3. Lancer le(s) script(s) d'installation à la main. Ces script vont:
     3.0 installer des libraries 
     3.1 installer sublime & co
