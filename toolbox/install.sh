@@ -11,7 +11,12 @@ echo "installing python-pudb";
 sudo apt-get install python-pudb &&
 echo "python-pudb succefully installed";
 cd $TOOL_BOX_ROOT && rm -rf .git && cd projectid && git init &&
-echo "git initied successfully" &&
-echo "you can link your git repo with \'git remote add origin [git url]\'";
-echo "install fbdtools";
+echo "git initied successfully";
+echo "Ready to install githooks...";
+cd $TOOL_BOX_ROOT/projectid/.git/hooks; 
+ln -s $TOOL_BOX_ROOT/projectid/config/hooks/pre-commit;
+ln -s $TOOL_BOX_ROOT/projectid/config/hooks/commit-msg;
+echo "githooks installed (symlinks created)";
+echo "HINT: you can link your git repo with \'git remote add origin [git url]\'";
+echo "Ready to install fbdtools...";
 $TOOL_BOX_ROOT/toolbox/install-fbd_tools.sh && echo "fbdtools successfully installed"
