@@ -11,6 +11,8 @@
         + il permet d'installer les paquets systeme suivants : sublime text, sphinx-doc, python-scikits-learn, python-pudb
         + il va egalement supprimer le .git actuel et initier un nouveau repo
         + créer les liens symboliques depuis .git/hooks vers conf/hooks (il faut que les liens soient executables)
+        + vous allez pouvoir indiquer si vous souhaitez installer sublime
+        + il vous sera demandé quelle branche du projet fbd_tools vous souhaitez installer
 4. Ajouter le nouveau repo; lancer la commande
     * bash  ```git remote add origin $(git url)```
 
