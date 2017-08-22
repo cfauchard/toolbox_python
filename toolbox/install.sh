@@ -10,24 +10,16 @@ echo 'Sublime is not being installed'
 else
 $TOOL_BOX_ROOT/toolbox/install-sublime.sh;
 fi
-###
-# SHPINX
-###
-echo "installing sphinx-doc"; 
-sudo apt-get install sphinx-doc &&
-echo "sphinx-doc successfully installed"; 
+##
+# pip install requirements: sphinx, pudb, nose
+##
+pip install -r $TOOL_BOX_ROOT/toolbox/requirements.txt
 ###
 # SCIKIT LEARN
 ###
 echo "installing python-scikits-learn";
 sudo apt-get install python-scikits-learn &&
 echo "python-scikits-learn successfully installed";
-###
-# PUDB - python debugger
-###
-echo "installing python-pudb";
-sudo apt-get install python-pudb &&
-echo "python-pudb succefully installed";
 ###
 # REMOVE .git  and git init
 ###
