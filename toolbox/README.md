@@ -44,4 +44,8 @@ Copier les settings d'anaconda dans sublime
 ```
 Normalement il faut juste ajouter E501.
 
+#### Known issues
+
+Le path vers le repertoire où vous installez la toolbox ne doit pas contenir d'espaces. 
+Par exemple, ``home/pepito/Usine Logicielle/toolbox`` ne fonctionne pas à cause de l'espace dans Usine Logicielle.
 
