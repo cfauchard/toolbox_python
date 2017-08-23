@@ -15,12 +15,6 @@ fi
 ##
 pip install -r $TOOL_BOX_ROOT/toolbox/requirements.txt
 ###
-# SCIKIT LEARN
-###
-echo "installing python-scikits-learn";
-sudo apt-get install python-scikits-learn &&
-echo "python-scikits-learn successfully installed";
-###
 # REMOVE .git  and git init
 ###
 cd $TOOL_BOX_ROOT && rm -rf .git && cd projectid && git init &&
