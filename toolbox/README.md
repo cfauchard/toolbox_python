@@ -1,7 +1,7 @@
 # Procédure d'installation de la toolbox:
 
 1. Création d'un virtualenv à la main
-    * virtualenv --system-site-packages -p python3 ``yourTargetDirectory``
+    * virtualenv -p python3 ``yourTargetDirectory``
 	(à faire avant si besoin: sudo apt-get install python3-pip python3-dev python-virtualenv # for Python 3.n)
     * dans ``yourTargetRepository``, lancer ``source bin/activate`` pour activer le virtualenv.
     * ``(yourTargetRepository$``) s'affiche devant le prompt.
