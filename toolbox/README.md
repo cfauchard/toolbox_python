@@ -1,18 +1,38 @@
 # Procédure d'installation de la toolbox:
 
-1. Création d'un virtualenv à la main
-    * virtualenv -p python3 ``yourTargetDirectory``
-	(à faire avant si besoin: sudo apt-get install python3-pip python3-dev python-virtualenv # for Python 3.n)
-    * dans ``yourTargetRepository``, lancer ``source bin/activate`` pour activer le virtualenv.
-    * ``(yourTargetRepository$``) s'affiche devant le prompt.
-2. Git clone de la toolbox à la main
-3. Lancer le(s) script(s) d'installation à la main
-    * lancer le script ``install.sh`` 
-        + il permet d'installer les paquets systeme suivants : sublime text, sphinx-doc, python-scikits-learn, python-pudb
-        + il va egalement supprimer le .git actuel et initier un nouveau repo
-        + créer les liens symboliques depuis .git/hooks vers conf/hooks (il faut que les liens soient executables)
+Afin de proceder à l'installation de la toolbox vous devez avoir une installation de miniconda sur votre ordinateur.
+
+Si vous en avez déjà un, passez à l'étape 2.
+
+## Installation de miniconda et création d'un virtualenv
+
+1. Récuperer les paquet minicondas: 
+    * `$ curl https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o miniconda.sh`
+2. Installer minicondas dans votre ``yourTargetDirectory``: 
+      `$ bash miniconda.sh -b -p yourTargetDirectory` `
+      Les dossiers suivants devraient être crées:
+      bin, conda-meta, **envs**, etc, include, lib, LICENSE.txt, pkgs, share   et ssl.
+      
+Vous pouvez ensuite ajouter ``yourTargetDirectory/bin`` dans votre PATH pour que conda soit accesible. 
+
+
+
+## Installation de la toolbox
+
+Pour installer la toolbox, vous devez avoir déjà installé miniconda sur votre poste de travaille.
+
+1. Placez vous dans le dossier ou vous souhaitez inittialiser le projet.
+2. Git clone de la toolbox à la main: 
+   `git clone git@gitlab.com:gintronati/toolbox_python.git`
+3. Installation de la toolbox à la main
+    * lancer le script ``install.sh`` (dans le dossier ``toolbox``) 
+     + il permet de créer un virtualenv avec tous les paquets listés dans ``environment.yml``
+     + installer les paquets systeme suivants : sublime text
+        + il va egalement supprimer le .git de la toolbox et initier un nouveau repo git dans le dossier projectId
+        + créer les liens symboliques depuis ``.git/hooks`` vers ``conf/hooks`` (il faut que les liens soient executables)
         + vous allez pouvoir indiquer si vous souhaitez installer sublime
         + il vous sera demandé quelle branche du projet fbd_tools vous souhaitez installer
+        + Dans le cas où vous allez travailler sur la toolbox (apporter des évolutions ou des corrections) vous devez passer *dev* en argument de bash install.sh 
 4. Ajouter le nouveau repo; lancer la commande
     * bash  ```git remote add origin $(git url)```
 
@@ -50,4 +70,12 @@ Normalement il faut juste ajouter E501.
 
 Le path vers le repertoire où vous installez la toolbox ne doit pas contenir d'espaces. 
 Par exemple, ``home/pepito/Usine Logicielle/toolbox`` ne fonctionne pas à cause de l'espace dans Usine Logicielle.
+
+## Activation d'un virtual env
+1. Pour créer un virtual env associé au projet dans lequel vous allez travailler, lancer `yourTargetRepository/bin/conda create -n $PROJECT_NAME`python
+    * Un nouveau dossier ``yourTargetRepository/envs/$PROJECT_NAME`` est crée.
+
+2. Pour l'activer, lancer  
+      `$ source yourTargetRepository/bin/activate $PROJECT_NAME`
+    * ``$PROJECT_NAME$`` s'affiche devant le prompt.
 
