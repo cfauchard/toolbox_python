@@ -79,3 +79,15 @@ Par exemple, ``home/pepito/Usine Logicielle/toolbox`` ne fonctionne pas à cause
       `$ source yourTargetRepository/bin/activate $PROJECT_NAME`
     * ``$PROJECT_NAME$`` s'affiche devant le prompt.
 
+
+## Export your PYTHONPATH
+
+You can export your PYTHONPATH by creating a file ens_args.sh in ``yourTargetRepository/envs/$PROJECT_NAME/etc/conda/activate.d/`` 
+(create te directory if it doesn't exist).
+
+The content of your file should look like this: 
+
+#!/bin/bash
+
+export PYTHONPATH=$PYTHONPATH:/your/path/here
+
