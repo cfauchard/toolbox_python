@@ -23,7 +23,7 @@ Pour installer la toolbox, vous devez avoir déjà installé miniconda sur votre
 
 1. Placez vous dans le dossier ou vous souhaitez inittialiser le projet.
 2. Git clone de la toolbox à la main: 
-   `git clone git@gitlab.com:gintronati/toolbox_python.git`
+   `git clone git@gitlab.com:gintronati/toolbox_python.git` (ou https://gitlab.com:gintronati/toolbox_python.git)
 3. Installation de la toolbox à la main
     * lancer le script ``install.sh`` (dans le dossier ``toolbox``) 
      + il permet de créer un virtualenv avec tous les paquets listés dans ``environment.yml``
